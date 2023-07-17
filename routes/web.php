@@ -20,3 +20,7 @@ Route::post('products', function (Request $request) {
     $new_product->save();
     return redirect()->route('products.index')->with('info', 'Producto creado exitosamente');
 })->name('products.store');
+
+Route::delete('products/{id}', function ($id) {
+    return $id;
+})->name('products.destroy');
